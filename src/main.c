@@ -60,15 +60,20 @@ int main(void) {
     &buf
   );
   fetch_data(curl);
+
+  FILE *f = fopen("moneyline_markets_epl.json", "w");
   cJSON *json = cJSON_Parse(buf.data);
-if (json) {
+  if (json) {
     char *pretty = cJSON_Print(json);
-    printf("%s\n", pretty);
+    fprintf(f, "%s\n", pretty);
     free(pretty);
     cJSON_Delete(json);
-} else {
-    printf("%s\n", buf.data);  // fallback
-}
+  } else {
+    fprintf(f, "%s\n", buf.data);
+  }
+  fclose(f);
+  printf("Saved to moneyline_markets_epl.json\n");
+
   cleanup(curl, &buf);
   return 0;
 }
