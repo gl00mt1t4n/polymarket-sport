@@ -1,0 +1,106 @@
+############################
+# Build / C artifacts
+############################
+*.o
+*.a
+*.so
+*.dylib
+*.exe
+*.out
+*.elf
+
+# Binaries
+polymarket
+main
+a.out
+
+# Build directories
+build/
+bin/
+dist/
+
+# CMake / Make
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+*.make
+
+############################
+# Debugging / profiling
+############################
+*.log
+*.dbg
+*.gdb
+*.prof
+*.valgrind
+vgcore.*
+
+############################
+# Editor / IDE
+############################
+
+# VS Code
+.vscode/
+
+# JetBrains
+.idea/
+*.iml
+
+# Cursor (AI editor)
+.cursor/
+.cursorignore
+
+# Claude / AI tools
+.claude/
+.claude-settings.json
+.claude.json
+
+# Vim
+*.swp
+*.swo
+*.swn
+*.tmp
+
+# Emacs
+*~
+\#*\#
+
+############################
+# OS files
+############################
+
+# macOS
+.DS_Store
+
+# Linux
+*.orig
+*.rej
+
+# Windows
+Thumbs.db
+desktop.ini
+
+############################
+# Archives / misc
+############################
+*.zip
+*.tar
+*.tar.gz
+*.rar
+*.7z
+
+############################
+# Temporary JSON / outputs
+############################
+*.json
+!package.json
+!tsconfig.json
+
+############################
+# Secrets (just in case)
+############################
+.env
+.env.*
+*.key
+*.pem
