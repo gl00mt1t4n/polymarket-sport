@@ -53,4 +53,23 @@ typedef struct {
     uint32_t count;
 } MatchBook;
 
+/* Position - Holdings for one outcome */
+typedef struct {
+    double shares;      /* Number of shares held */
+    double cost_basis;  /* Total $ spent to acquire */
+} Position;
+
+/* MatchPosition - All positions for one match */
+typedef struct {
+    char event_id[16];        /* Links to Match */
+    Position pos[3];          /* [TEAM1, DRAW, TEAM2] */
+} MatchPosition;
+
+/* Portfolio - All positions across all matches */
+typedef struct {
+    MatchPosition positions[MAX_MATCHES];
+    uint32_t count;
+    double cash;              /* Available cash balance */
+} Portfolio;
+
 #endif

@@ -9,6 +9,9 @@ void matchbook_init(MatchBook *book);
 void matchbook_print(const MatchBook *book);
 int parse_events(const char *json_str, MatchBook *book);
 
+/* From simulation.c */
+void run_simulation(MatchBook *book, double starting_cash, int num_matches, double bet_size);
+
 /* Dump raw data structure to JSON file */
 static void dump_raw(const MatchBook *book, const char *filename) {
     cJSON *root = cJSON_CreateArray();
@@ -99,6 +102,12 @@ int main(void) {
 
     matchbook_print(&book);
     dump_raw(&book, "matchbook_raw.json");
+
+    /* Demo: simulate trading */
+    printf("\n--- Trade Simulation ---\n\n");
+
+    run_simulation(&book, 1000.0, 3, 100.0);
+
     free(json);
     return 0;
 }

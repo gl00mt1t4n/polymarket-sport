@@ -1,6 +1,6 @@
 #include "types.h"
-#include <string.h>
 #include <stdio.h>
+#include <string.h>
 
 void matchbook_init(MatchBook *book) {
     book->count = 0;
