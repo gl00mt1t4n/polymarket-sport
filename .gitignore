@@ -12,6 +12,8 @@
 # Binaries
 polymarket
 main
+markets
+parser
 a.out
 
 # Build directories

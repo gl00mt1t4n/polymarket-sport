@@ -17,9 +17,9 @@ void matchbook_print(const MatchBook *book) {
     for (uint32_t i = 0; i < book->count; i++) {
         const Match *m = &book->matches[i];
         printf("%s vs %s (%s)\n", m->team1, m->team2, m->date);
-        printf("  %-25s  %.2f / %.2f  (%.0f%%)\n", m->team1, m->markets[TEAM1].bid, m->markets[TEAM1].ask, m->markets[TEAM1].prob * 100);
-        printf("  %-25s  %.2f / %.2f  (%.0f%%)\n", "Draw", m->markets[DRAW].bid, m->markets[DRAW].ask, m->markets[DRAW].prob * 100);
-        printf("  %-25s  %.2f / %.2f  (%.0f%%)\n", m->team2, m->markets[TEAM2].bid, m->markets[TEAM2].ask, m->markets[TEAM2].prob * 100);
+        printf("\t %-25s  %.2f / %.2f  (%.0f%%)\n", m->team1, m->markets[TEAM1].bid, m->markets[TEAM1].ask, m->markets[TEAM1].prob * 100);
+        printf("\t %-25s  %.2f / %.2f  (%.0f%%)\n", "Draw", m->markets[DRAW].bid, m->markets[DRAW].ask, m->markets[DRAW].prob * 100);
+        printf("\t %-25s  %.2f / %.2f  (%.0f%%)\n", m->team2, m->markets[TEAM2].bid, m->markets[TEAM2].ask, m->markets[TEAM2].prob * 100);
         printf("\n");
     }
 }
